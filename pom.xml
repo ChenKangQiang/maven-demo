@@ -7,7 +7,40 @@
     <groupId>edu.tongji.comm</groupId>
     <artifactId>maven-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>maven-demo-api</module>
+        <module>maven-demo-biz</module>
+        <module>maven-demo-service</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--引入bom-->
+            <dependency>
+                <groupId>edu.tongji.comm</groupId>
+                <artifactId>maven-demo-resource</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>4.3.9.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>4.3.9.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.3.9.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -24,6 +57,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

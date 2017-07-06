@@ -18,7 +18,7 @@
         <dependencies>
             <dependency>
                 <groupId>edu.tongji.comm</groupId>
-                <artifactId>maven-demo-resource</artifactId>
+                <artifactId>maven-demo-bom</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
